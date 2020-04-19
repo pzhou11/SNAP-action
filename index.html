@@ -136,7 +136,11 @@
 
           // create a variable for your markup and add it to the map 
           var marker = new mapboxgl.Marker({
-              color: 'purple'
+            if (row.EBT_at_register = 'Y') {
+              color: 'purple';
+            } else {
+              color: 'green;
+            }
             })
             .setLngLat([row.Longitude, row.Latitude])
             .setPopup(popup)
