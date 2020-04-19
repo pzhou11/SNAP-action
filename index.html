@@ -135,10 +135,18 @@
 
           // create function to change the marker color
           function marker_color() {
-            if (row.county == 'San Mateo') {
-              return "red"
-            } else {
+            if (row.SNAP_Store == 1) {
+              return "green"
+            } else if (row.SNAP_WIC_Store == 1) {
               return "purple"
+            } else if (row.SNAP_Restaurant == 1) {
+              return "blue"
+            } else if (row.SNAP_Farmers_Market == 1) {
+              return "red"
+            } else if (row.WIC_Only == 1) {
+              return "black"
+            } else {
+              return "yellow"
             }
           }
           
