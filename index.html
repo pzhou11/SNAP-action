@@ -133,10 +133,18 @@
           var popup = new mapboxgl.Popup()
             .setHTML(`<h3>` + row.Name + `</h3>` + '<h4>' + '<b>' + 'Address: ' + '</b>' + row.Address + '</h4>' + '<h4>' + '<b>' + 'Phone: ' + '</b>' + row.Phone + '</h4>'); // use the table to populate your popup with text
 
-
+          // create function to change the marker color
+          function marker_color() {
+            if (row.county == 'San Mateo') {
+              return "red"
+            } else {
+              return "purple"
+            }
+          }
+          
           // create a variable for your markup and add it to the map 
           var marker = new mapboxgl.Marker({
-              color: 'purple'
+              color: marker_color()
             })
             .setLngLat([row.Longitude, row.Latitude])
             .setPopup(popup)
